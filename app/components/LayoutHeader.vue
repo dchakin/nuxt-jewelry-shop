@@ -1,0 +1,87 @@
+<template>
+  <div class="header">
+    <NuxtLink to="/">
+      <IconLogo />
+    </NuxtLink>
+
+    <div class="header__content">
+      <div class="header__menu">
+        <NuxtLink to="/catalog">Магазин</NuxtLink>
+        <NuxtLink to="/about">О нас</NuxtLink>
+      </div>
+
+      <div class="header__hr" />
+
+      <div class="header__icons">
+        <NuxtLink to="#">
+          <Icon
+            name="app-icon:search"
+            size="21" />
+        </NuxtLink>
+        <NuxtLink to="/cart">
+          <Icon
+            name="app-icon:cart"
+            size="21" />
+        </NuxtLink>
+        <NuxtLink to="/favorites">
+          <Icon
+            name="app-icon:favorite"
+            size="21" />
+        </NuxtLink>
+        <NuxtLink to="/account">
+          <Icon
+            name="app-icon:user"
+            size="21" />
+        </NuxtLink>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup></script>
+
+<style scoped>
+.header {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1248px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 48px;
+  border-bottom: 1px solid var(--color-gray);
+}
+
+.header__content {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.header__menu {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.header__menu a {
+  font-size: 16px;
+  line-height: 27px;
+  color: var(--color-black);
+  padding-bottom: 48px;
+  text-decoration: none;
+}
+
+.header__icons {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  padding-bottom: 48px;
+}
+
+.header__hr {
+  border-left: 1px solid var(--color-dark-gray);
+  height: 17px;
+  align-self: flex-start;
+  margin-top: 4px;
+}
+</style>
