@@ -71,11 +71,26 @@
   text-decoration: none;
 }
 
+.header__menu a:hover {
+  color: var(--color-dark-gray)
+}
+
+.header__menu a.router-link-active {
+  border-bottom: 1px solid var(--color-black);
+}
+
 .header__icons {
   display: flex;
   gap: 40px;
   align-items: center;
+}
+
+.header__icons a {
   padding-bottom: 48px;
+}
+
+.header__icons a.router-link-active {
+  border-bottom: 1px solid var(--color-black);
 }
 
 .header__hr {
