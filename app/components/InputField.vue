@@ -1,5 +1,5 @@
 <template>
-  <input class="input" v-model="data" :class="variant"/>
+  <input v-model="data" :class="[$style[variant], $style.input]"/>
 </template>
 
 <script lang="ts" setup>
@@ -10,7 +10,7 @@ const {} = defineProps<{
 const data = defineModel<string>('')
 </script>
 
-<style scoped>
+<style module>
 .input {
   padding: 12px 0;
   background: none;
