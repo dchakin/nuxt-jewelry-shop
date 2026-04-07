@@ -1,9 +1,11 @@
 <template>
-  <input v-model="data" :class="[$style[variant], $style.input]"/>
+  <input
+    v-model="data"
+    :class="[$style[variant], $style.input]" />
 </template>
 
 <script lang="ts" setup>
-const {} = defineProps<{
+const { variant } = defineProps<{
   variant: 'gray' | 'black'
 }>()
 
