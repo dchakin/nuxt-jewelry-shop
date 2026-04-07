@@ -4,7 +4,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
-      apiUrl: '',
+      apiUrl: "",
+      imageUrl: "",
     }
   },
   icon: {
