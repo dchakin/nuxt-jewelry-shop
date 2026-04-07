@@ -44,6 +44,7 @@
 .header {
   width: 100%;
   margin: 0 auto;
+  padding: 0 16px;
   max-width: 1248px;
   display: flex;
   justify-content: space-between;
