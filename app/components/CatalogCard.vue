@@ -1,28 +1,30 @@
+<script lang="ts" setup>
+import type { Product } from "~/interfaces/product.interface";
+
+const product = defineProps<Product>();
+const config = useRuntimeConfig();
+const image = computed(
+  () => `url(${config.public.imageUrl}${product.images[0]})`
+);
+</script>
+
 <template>
-  <NuxtLink
-    class="card"
-    to="/">
-    <div
-      class="card__image"
-      :style="{
-        background: `url(${config.public.imageUrl}${product.images[0]}) lightgray 50% / cover no-repeat`,
-      }">
-      <div class="card__discount">-{{ product.discount }}</div>
+  <NuxtLink class="card" :to="`/catalog/${product.id}`">
+    <div class="card__image">
+      <span v-if="product.discount > 0" class="card__discount"
+        >-{{ product.discount }}%</span
+      >
     </div>
 
-    <div class="card__name">{{ product.name }}</div>
+    <div class="card__footer">
+      <div class="card__name">
+        {{ product.name }}
+      </div>
 
-    <div>$ {{ product.price }}</div>
+      <div class="card__price">$ {{ product.price }}</div>
+    </div>
   </NuxtLink>
 </template>
-
-<script lang="ts" setup>
-import type { Product } from '~/interfaces/product.interface'
-
-const product = defineProps<Product>()
-
-const config = useRuntimeConfig()
-</script>
 
 <style scoped>
 .card {
@@ -40,6 +42,9 @@ const config = useRuntimeConfig()
   min-width: 320px;
   border-radius: 8px;
   padding: 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: v-bind(image);
 }
 
 .card__price {
@@ -48,6 +53,12 @@ const config = useRuntimeConfig()
   line-height: 26px;
   text-transform: capitalize;
   color: var(--color-accent);
+}
+
+.card__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .card__name {
@@ -62,6 +73,5 @@ const config = useRuntimeConfig()
   padding: 2px 8px;
   font-size: 12px;
   color: var(--color-white-light);
-  justify-self: start;
 }
 </style>
