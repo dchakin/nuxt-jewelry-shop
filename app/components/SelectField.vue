@@ -47,6 +47,7 @@ const { options } = defineProps<{
 
 .select {
   appearance: none;
+  outline: none;
   background-color: transparent;
   border: 1px solid var(--color-gray);
   padding: 15px 12px;

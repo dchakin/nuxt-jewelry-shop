@@ -14,10 +14,12 @@ const data = defineModel<string>('')
 
 <style module>
 .input {
+  width: 100%;
   padding: 12px 0;
   background: none;
   border: none;
   color: var(--color-black);
+  outline: none;
 }
 
 .input::placeholder {
