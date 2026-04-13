@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useDebounceFn } from '@vueuse/core'
 import type { GetCategoriesResponse } from '~/interfaces/category.interface'
 import type { GetProductsResponse } from '~/interfaces/product.interface'
 
@@ -16,14 +17,18 @@ const query = computed(() => ({
   search: route.query.search || undefined,
 }))
 
-watchEffect(() => {
+watch([category_id, search], () => {
+  changeRoute(category_id, search)
+})
+
+const changeRoute = useDebounceFn((category_id, search) => {
   router.replace({
     query: {
       category_id: category_id.value,
       search: search.value,
     },
   })
-})
+}, 200)
 
 const { data } = await useFetch<GetCategoriesResponse>(`${API_URL}/categories`)
 
