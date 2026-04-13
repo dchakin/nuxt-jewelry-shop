@@ -28,5 +28,5 @@ export default defineNuxtConfig({
       ]
     }
   },
-  modules: ['@nuxt/fonts', '@nuxt/eslint', '@nuxt/icon'],
+  modules: ['@nuxt/fonts', '@nuxt/eslint', '@nuxt/icon', '@pinia/nuxt'],
 })

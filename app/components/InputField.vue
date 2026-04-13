@@ -9,7 +9,7 @@ const { variant } = defineProps<{
   variant: 'gray' | 'black'
 }>()
 
-const data = defineModel<string>('')
+const data = defineModel<string>()
 </script>
 
 <style module>
