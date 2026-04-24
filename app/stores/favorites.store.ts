@@ -33,4 +33,6 @@ export const useFavoritesStore = defineStore('favorites', () => {
     toggleFavorites,
     removeFromFavorites
   }
+}, {
+  persist: true
 })
