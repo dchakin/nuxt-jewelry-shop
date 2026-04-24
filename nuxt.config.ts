@@ -8,6 +8,31 @@ export default defineNuxtConfig({
       imageUrl: "",
     }
   },
+  app: {
+    head: {
+      title: 'Магазин Shoppe',
+      htmlAttrs: {
+        lang: 'ru'
+      },
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '32x32',
+          href: '/favicon-32x32.png'
+        },
+        {
+          rel: 'manifest',
+          crossorigin: 'anonymous',
+          href: '/manifest.webmanifest'
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css'
+        }
+      ]
+    }
+  },
   icon: {
     customCollections: [
       {
@@ -19,13 +44,6 @@ export default defineNuxtConfig({
   postcss: {
     plugins: {
       'postcss-nested': {}
-    }
-  },
-  app: {
-    head: {
-      link: [
-        { rel: "stylesheet", href: 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css' }
-      ]
     }
   },
   modules: [
