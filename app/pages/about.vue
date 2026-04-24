@@ -2,6 +2,10 @@
   <div>about</div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+useSeoMeta({
+  title: 'О магазине Shoppe',
+})
+</script>
 
 <style></style>

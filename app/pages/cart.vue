@@ -5,7 +5,9 @@
 </template>
 
 <script lang="ts" setup>
-
+useSeoMeta({
+  title: "Корзина товаров",
+});
 </script>
 
 <style>
