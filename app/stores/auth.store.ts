@@ -8,6 +8,8 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   function clearToken() {
+    console.log('clear');
+    
     token.value = '';
   }
 
