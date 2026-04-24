@@ -1,13 +1,11 @@
 <template>
-  <div>
-    Account
-  </div>
+  <div>Account</div>
 </template>
 
 <script lang="ts" setup>
-
+definePageMeta({
+  middleware: 'auth',
+})
 </script>
 
-<style>
-
-</style>
+<style></style>

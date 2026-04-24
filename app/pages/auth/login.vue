@@ -33,6 +33,7 @@ import type { LoginResponse } from '~/interfaces/auth.interface'
 const API_URL = useApi()
 const email = ref<string>('')
 const password = ref<string>('')
+const authStore = useAuthStore()
 
 async function login() {
   const data = await $fetch<LoginResponse>(`${API_URL}/auth/login`, {
@@ -43,7 +44,7 @@ async function login() {
     },
   })
 
-  console.log(data)
+  authStore.setToken(data.token)
 }
 </script>
 
