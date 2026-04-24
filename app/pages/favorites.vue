@@ -11,8 +11,7 @@
 import type { Product } from '~/interfaces/product.interface'
 
 const favoritesStore = useFavoritesStore()
-const config = useRuntimeConfig()
-const API_URL = config.public.apiUrl
+const API_URL = useApi()
 const products = ref<Product[]>()
 
 watchEffect(async () => {
